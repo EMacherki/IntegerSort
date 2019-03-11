@@ -6,4 +6,9 @@ IntegerSort package need compilation (basically written with Rcpp) and can be in
 ```
 devtools::install_github("EMacherki/IntegerSort")
 ```
+After installation restart R sesssion and the package is running.
+
+### Benchmarking
+
+
 
