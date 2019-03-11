@@ -9,6 +9,28 @@ devtools::install_github("EMacherki/IntegerSort")
 After installation restart R sesssion and the package is running.
 
 ### Benchmarking
+#### counting sort
+
+```
+> x<-sample(1:10000,10000000,TRUE)
+> # x is a large integer vector with supported range 
+> system.time(sort(x))
+utilisateur     système      écoulé 
+       0.58        0.05        0.62 
+> system.time(countSort(x))
+utilisateur     système      écoulé 
+       0.05        0.02        0.07 
+> all.equal(countSort(x),sort(x)) # return TRUE
+[1] TRUE
+> # in-place running
+> system.time(countSort(x,inplace= TRUE)) 
+utilisateur     système      écoulé 
+       0.05        0.00        0.05 
+> all.equal(sort(x),x)  #return TRUE
+[1] TRUE
+```
+
+
 
 
 
