@@ -3,5 +3,8 @@ This package uses RAM based algorithm such as radix sort and counting sort and i
 
 ### Installation
 To install IntegerSort package from github :
-
+```
 devtools::install_github("EMacherki/IntegerSort")
+}
+```
+
