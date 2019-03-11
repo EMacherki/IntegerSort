@@ -29,7 +29,37 @@ utilisateur     système      écoulé
 > all.equal(sort(x),x)  #return TRUE
 [1] TRUE
 ```
+#### lsdSort
 
+```
+> x<-isample(10000000)
+> # x is an uniform  sample of intgers
+> system.time(sort(x))
+utilisateur     système      écoulé 
+       1.31        0.00        1.31 
+> system.time(lsdSort(x))
+utilisateur     système      écoulé 
+       0.18        0.03        0.20 
+> all.equal(sort(x),lsdSort(x)) # return TRUE
+[1] TRUE
+> system.time(lsdSort(x,TRUE))  # testing in-place
+utilisateur     système      écoulé 
+       0.14        0.00        0.16 
+> all.equal(sort(x),x)          # return TRUE 
+[1] TRUE
+```
+
+#### insertSort
+For this example we use microbenchmark package:
+```
+> x<-isample(60)
+> microbenchmark::microbenchmark(insertSort(x),lsdSort(x),sort(x))
+Unit: microseconds
+          expr    min      lq     mean median      uq     max neval
+ insertSort(x)  2.994  3.4220  4.50364  3.850  5.5600   7.271   100
+    lsdSort(x)  5.559  5.9880  7.21058  6.415  8.1260  25.659   100
+       sort(x) 65.428 67.5665 70.04705 67.995 69.4915 160.791   100
+```
 
 
 
