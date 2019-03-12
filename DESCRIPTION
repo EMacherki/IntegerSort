@@ -3,7 +3,7 @@ Type: Package
 Title: Sorting Methods for Integer Vector
 Version: 0.0.1
 Date: 2019-02-20 15:30:03 UTC
-Authors@R: person( "Med Ezzeddine","MACHERKI", role = c("aut", "cre"), email = "macherkimedezzeddine@live.fr")
+Authors@R: person( "Med Ezzeddine","MACHERKI", role = c("aut", "cre"), email = "macherkimedezzeddine@live.fr", comment = c(ORCID = "0000-0002-9568-4745"))
 Author: Med Ezzeddine MACHERKI [aut, cre]
 Maintainer: Med Ezzeddine MACHERKI <macherkimedezzeddine@live.fr>
 Description: Use fast  sorting methods toolbox for integer vector.
