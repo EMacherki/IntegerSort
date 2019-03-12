@@ -25,7 +25,7 @@ Despite the higher complexity, it is very efficient and rapid for small vector. 
 This function do note pass a busy state check. User must utilize this function carefully and avoid to use it when the size of vector is not known by default.
      }
 
-\author{M. E. MACHERKI}
+\author{Med Ezzeddine MACHERKI}
 
 \seealso{
 \code{\link{sort}}
