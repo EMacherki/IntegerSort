@@ -14,12 +14,11 @@ The algorithm use 8 KB  buffer and a helper array. Therefore it use
 3.N+8 Kb as memory buffer(2.N for in_place), counting the cloning of the input. This function is used preferably for large data (N>10.E6). User must check memory before running algorithm.
 Non finite values are added in the front of returned vector and only increasing sens is provided. The algorithm used don't check if the data is already sorted. 
        }
-
 \value{
 \item{Default}{  A sorted integer values. All Non finite values are placed in the beginning of the vector.}
 \item{Inplace}{   The returned value is the input vector with sorted values  }
 }
-\author{M. E. MACHERKI}
+\author{Med Ezzeddine MACHERKI}
 
 
 \seealso{
