@@ -15,7 +15,7 @@ This function provides a  random uniform integer vector ranged form -2147483647 
       }
 
 
-\author{M. E. MACHERKI}
+\author{Med Ezzeddine MACHERKI}
 
 
 \seealso{
