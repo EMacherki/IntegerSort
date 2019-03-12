@@ -9,10 +9,10 @@ authors(2011,ISBN:978-0321573513)
 authors(1992)<doi:https://doi.org/10.1093/comjnl/35.6.636>
 Maintainer: Med Ezzeddine MACHERKI <macherkimedezzeddine@live.fr>
 Description:
-   This package uses RAM based algorithm such as radix sort and counting sort and is designed
-   to manipulate large data.For opposit targe,insertion sort algorithm is added to operate small
-   data set. Such algorithms give more performance when it used with uniform data and are considered
-   as low level tools (C/C++ ressources ) which leads more vigilance and good practice of user.
+ This package uses RAM based algorithm such as radix sort and counting sort and is designed
+ to manipulate large data.For opposit targe,insertion sort algorithm is added to operate small
+ data set. Such algorithms give more performance when it used with uniform data and are considered
+ as low level tools (C/C++ ressources ) which leads more vigilance and good practice of user.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.0)
 LinkingTo: Rcpp
