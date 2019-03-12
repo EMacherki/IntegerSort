@@ -19,7 +19,7 @@ Counting sort is one of the most used algorithm for small range vector of data.T
 \item{Inplace}{The returned value is the input vector with sorted values}
       }
 
-\author{M. E. MACHERKI}
+\author{Med Ezzeddine MACHERKI}
 
 
 \seealso{
