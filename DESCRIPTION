@@ -17,4 +17,3 @@ License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.0)
 LinkingTo: Rcpp
 Repository: CRAN
-
