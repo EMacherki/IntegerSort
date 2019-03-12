@@ -1,0 +1,19 @@
+Package: IntegerSort
+Type: Package
+Title: Sorting Methods for Integer Vector
+Version: 0.0.1
+Date: 2019-02-20 15:30:03 UTC
+Authors@R: person( "Med Ezzeddine","MACHERKI", role = c("aut", "cre"), email = "macherkimedezzeddine@live.fr", comment = c(ORCID = "0000-0002-9568-4745"))
+Author: Med Ezzeddine MACHERKI [aut, cre]
+Authors: (2011,ISBN:978-0321573513)
+Authors: (1992)<doi:https://doi.org/10.1093/comjnl/35.6.636>
+Maintainer: Med Ezzeddine MACHERKI <macherkimedezzeddine@live.fr>
+Description:
+ This package uses RAM based algorithm such as radix sort and counting sort and is designed
+ to manipulate large data.For opposit targe,insertion sort algorithm is added to operate small
+ data set. Such algorithms give more performance when it used with uniform data and are considered
+ as low level tools (C/C++ ressources ) which leads more vigilance and good practice of user.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.0)
+LinkingTo: Rcpp
+Repository: CRAN
