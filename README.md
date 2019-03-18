@@ -52,6 +52,8 @@ utilisateur     système      écoulé
 #### insertSort
 For this example we use microbenchmark package:
 ```
+# isample gives a random uniform integer vector 
+# we can use runif
 > x<-isample(60)
 > microbenchmark::microbenchmark(insertSort(x),lsdSort(x),sort(x))
 Unit: microseconds
