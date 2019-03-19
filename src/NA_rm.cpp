@@ -21,53 +21,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-/* 
-  
- This file adapt an implimentation of counting sort of integers
- with 16 bit range (max-min< 2^16).The algorithm used calculate
- maxima and  minima to fit a tranformation function of data into 
- a counting bucket.While filling the output , the counting bucket
- is reset allowing generic behavour. In case of range overflow,
- the counting algorithm is managed to avoid create extra memory
- if a new vector is needed for the result.Only finite values are
- managed by this code into increasing order. 
- 
- */
-
-
-
 
 #include <Rcpp.h>
-#include "counting.h" 
 
 
-using namespace Rcpp; 
+       using namespace Rcpp;
+
+
+// [[Rcpp::export]]
+SEXP NA_rm(SEXP x){
+int *ptr=INTEGER(x);
+int N=LENGTH(x);
+int nNA=0;
+  for(int *i=ptr;i!=ptr+N;i++)nNA+=*i==NA_INTEGER;
+  if(nNA==0) return x;
+  SEXP res=Rf_allocVector(INTSXP,N-nNA);
+  int *ptr_res=INTEGER(res);
+  for(int *i=ptr;i!=ptr+N;i++) 
+    if(*i!=NA_INTEGER)*ptr_res++ =*i;
+  return res;
+}
 
 
 
 
-
- 
-
-
-
-
-
- 
- 
- 
- 
-// interface
- 
- // [[Rcpp::export]]
- 
- SEXP countSort(SEXP unsorted,
-         bool inplace=false 
-           )
-   {
-   
-   if(inplace)
-   return CS_inplace(unsorted);
-   return CS_helper(unsorted);
- }
-  

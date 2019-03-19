@@ -21,53 +21,49 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-/* 
-  
- This file adapt an implimentation of counting sort of integers
- with 16 bit range (max-min< 2^16).The algorithm used calculate
- maxima and  minima to fit a tranformation function of data into 
- a counting bucket.While filling the output , the counting bucket
- is reset allowing generic behavour. In case of range overflow,
- the counting algorithm is managed to avoid create extra memory
- if a new vector is needed for the result.Only finite values are
- managed by this code into increasing order. 
- 
- */
-
-
-
 
 #include <Rcpp.h>
-#include "counting.h" 
-
-
-using namespace Rcpp; 
 
 
 
 
-
- 
-
+       using namespace Rcpp;
 
 
-
-
- 
- 
- 
- 
-// interface
- 
- // [[Rcpp::export]]
- 
- SEXP countSort(SEXP unsorted,
-         bool inplace=false 
-           )
-   {
-   
-   if(inplace)
-   return CS_inplace(unsorted);
-   return CS_helper(unsorted);
- }
+inline 
+  void 
+      sort_insert( int *A,
+                   const int N
+) {
+        
+  if(N<2)return;
+  int *j,*k,*i,x,tmp;
   
+ tmp=*A;*A= INT_MIN; x=*(A+1);                  // starting
+  
+  for(i=A+1; i!=A+N;*k=x,i++,x=*i)
+    for(j=i-1,k=i;*j>x;j--,k--)*k =*j;
+  
+  for(i=A+1,k=A; *i<tmp && i!=A+N ;i++,k++)*k=*i; // finalizer 
+  
+  *k=tmp;
+  
+}
+
+
+ // R Api
+inline SEXP  isort_inplace(SEXP On){ 
+    sort_insert(INTEGER(On),LENGTH(On));
+  return On;
+}
+
+inline SEXP  isort(SEXP u){ 
+  SEXP On=clone(u);
+  sort_insert(INTEGER(On),LENGTH(On));
+  return On;
+}
+
+
+
+
+
