@@ -75,7 +75,11 @@ double p_int_pair (unsigned *l, unsigned *r, int k){
     unsigned *it=tmp;
     for(unsigned *i=l;i!=r;i++) *it++=*i;
     sort_insert((int*)tmp,r-l);
-    return ((double)tmp[k]+(double)tmp[k-1])/(double) 2;
+    double v1=(int)tmp[k];
+    double v2=(int)tmp[k-1];
+    
+    
+    return (v1+v2)/2.0;
     
     
   }
@@ -84,8 +88,9 @@ double p_int_pair (unsigned *l, unsigned *r, int k){
     unsigned *it=tmp;
     for(unsigned *i=l;i!=r;i++) *it++=*i;
     olsd(tmp,tmp+(r-l));
-    return ((double)tmp[k]+(double)tmp[k-1])/(double) 2;
-    
+    double v1=(int)tmp[k];
+    double v2=(int)tmp[k-1];
+    return (v1+v2)/2.0; 
     
   }
   
