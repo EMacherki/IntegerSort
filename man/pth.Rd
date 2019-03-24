@@ -14,8 +14,7 @@ pth(x,p)
           }
           
 \details{
-For large data,the algorithm used is unstable method to find pth element. It uses two keys with 16 bit size to fit the result.The complexity of the algorithm is linear O(N).This function don't fit exactly R \code{\link{median}} function. Indeed, NA values are considered as the lowest
-values of integer.User can utilize \code{\link{NA_rm}} for correction. For small data,insertion sort and LSD sort are used with a helper buffer.
+For large data,the algorithm used is unstable method to find pth element. It uses two keys with 16 bit size to fit the result. The complexity of the algorithm is linear O(N). NA values are considered as the lowest values of integer. User can utilize \code{\link{NA_rm}} for correction. For small data, insertion sort and LSD sort are used with a helper buffer.
         }
 \value{
 \item{Default}{ An integer value of the pth element  }
@@ -32,9 +31,10 @@ values of integer.User can utilize \code{\link{NA_rm}} for correction. For small
  \code{\link{NA_rm}}
        }
 \examples{
-
+\dontrun{
 x<-isample(1e6)
-all.equal(pth(x,5000),sort(x)[5000])
-
+target<-5000
+all.equal(pth(x,target),sort(x)[target])
+}
 }
 \keyword{arith}

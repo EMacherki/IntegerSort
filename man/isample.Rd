@@ -26,10 +26,12 @@ This function provides a  random uniform integer vector ranged form -2147483647 
 }
 
 \examples{
+\dontrun{
 ## only one value 
 print(isample())
 ## 10 values
 print(isample(10))
+         }
          }
          
 \keyword{arith}

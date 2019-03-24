@@ -2,7 +2,7 @@
 \alias{insertSort}
 
 \title{Insertion Sort  Algorithm}
-\description{Sorting Integer vector using insertion sort.}
+\description{This function  uses insertion sort algorithm for small or quasi sorted integer vector. }
 
 \usage{
 insertSort( unsorted, inplace=FALSE )
@@ -10,12 +10,13 @@ insertSort( unsorted, inplace=FALSE )
 
 \arguments{
 \item{unsorted}{ Unsorted integer vector}
-\item{inplace}{ If true the input will sorted in-place,decreasing memory usage  }
+\item{inplace}{ If true the input will sorted in-place,which require memory usage  }
           }
           
 \details{
-Insertion sort belong to the kind of algorithm designed for small data set(less then 100 values).
-Despite the higher complexity, it is very efficient and rapid for small vector. We used a modified algorithm allowing only one check of vector. 
+Insertion sort belong to the kind of algorithm designed for small or quasi sorted data set (less then 100 values).
+Despite the higher complexity, it is very efficient and rapid  in the sphere of its application. We used a non standard  algorithm with three step, that exploit infinite small value added in the vector head to do only one comparison and finalized by a correction step.
+Non finite values are added in the front of returned vector and only increasing sens is provided. The algorithm used don't check if the data is already sorted. 
         }
 \value{
 \item{Default}{  A sorted integer values}
@@ -34,7 +35,7 @@ This function do note pass a busy state check. User must utilize this function c
 \code{\link{countSort}}
        }
 \examples{
-
+\dontrun{
 x<-isample(20)
 # x is a sample of integer
 print(x)
@@ -46,5 +47,6 @@ insertSort(x,inplace=TRUE)
 print(x)
 all.equal(x,sort(x))
 # return TRUE
+}
 }
 \keyword{arith}
