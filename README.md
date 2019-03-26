@@ -7,7 +7,7 @@ IntegerSort package need compilation (basically written with Rcpp) and can be in
 require(devtools)
 devtools::install_github("EMacherki/IntegerSort")
 ```
-Some time we have to force installation if we won't to update. In this case we have turne force to TRUE int the  devtools::install_github.
+Some time we have to force installation if we won't to update. In this case we have turne force to TRUE in the  'devtools::install_github' function. 
 ```
 require(devtools)
 devtools::install_github("EMacherki/IntegerSort",force=TRUE)
