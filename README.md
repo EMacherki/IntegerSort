@@ -7,6 +7,11 @@ IntegerSort package need compilation (basically written with Rcpp) and can be in
 require(devtools)
 devtools::install_github("EMacherki/IntegerSort")
 ```
+Some time we have to force installation if we won't to update. In this case we have turne force to TRUE int the  devtools::install_github.
+```
+require(devtools)
+devtools::install_github("EMacherki/IntegerSort",force=TRUE)
+```
 After installation restart R session and the package is running.
 
 ### Benchmarking
@@ -18,16 +23,16 @@ After installation restart R session and the package is running.
 > x<-sample(1:10000,10000000,TRUE)
 > # x is a large integer vector with supported range 
 > system.time(sort(x))
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        0.58        0.05        0.62 
 > system.time(countSort(x))
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        0.05        0.02        0.07 
 > all.equal(countSort(x),sort(x)) # return TRUE
 [1] TRUE
 > # in-place running
 > system.time(countSort(x,inplace= TRUE)) 
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        0.05        0.00        0.05 
 > all.equal(sort(x),x)  #return TRUE
 [1] TRUE
@@ -38,15 +43,15 @@ utilisateur     système      écoulé
 > x<-isample(10000000)
 > # x is an uniform  sample of intgers
 > system.time(sort(x))
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        1.31        0.00        1.31 
 > system.time(lsdSort(x))
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        0.18        0.03        0.20 
 > all.equal(sort(x),lsdSort(x)) # return TRUE
 [1] TRUE
 > system.time(lsdSort(x,TRUE))  # testing in-place
-utilisateur     système      écoulé 
+utilisateur     systÃ¨me      Ã©coulÃ© 
        0.14        0.00        0.16 
 > all.equal(sort(x),x)          # return TRUE 
 [1] TRUE
@@ -71,10 +76,10 @@ This function calculate median:
 x<-isample(1e7)
 all.equal(imedian(x),median(x)) # return true
 > system.time(median(x))
-#utilisateur     syst�me      �coul� 
+#utilisateur     système      écoulé 
 #       0.19        0.05        0.25 
 system.time(imedian(x))
-#utilisateur     syst�me      �coul� 
+#utilisateur     système      écoulé 
 #       0.03        0.00        0.03  
 
 ```
