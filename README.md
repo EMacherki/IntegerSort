@@ -109,6 +109,3 @@ x<-as.integer(c(NA,NA,88))
 NA_rm(x) #return 88
 
 ```
-
-
-
